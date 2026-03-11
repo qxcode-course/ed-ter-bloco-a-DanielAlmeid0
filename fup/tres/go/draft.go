@@ -1,5 +1,13 @@
 package main
+
 import "fmt"
+
 func main() {
-    fmt.Println("qxcode")
+	var a, b, c int
+
+	fmt.Scan(&a, &b, &c)
+
+	resultado := a + b + c
+
+		fmt.Println(resultado)
 }

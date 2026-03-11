@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_12-38-27",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n\n    var n, d int\n\n    fmt.Scan(&n, &d)\n\n    quociente := n / d\n    resto := n % d\n\n    fmt.Println(quociente, resto);\n}\n",
+            "lines": "14"
+        }
+    ]
+}

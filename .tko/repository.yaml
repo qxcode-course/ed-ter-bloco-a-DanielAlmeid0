@@ -20,8 +20,11 @@ sources:
   cache_timestamp: '2026-03-11 11:50:20'
   quests: null
   tasks: null
-expanded: []
-tasks: {}
+expanded:
+- fup@campanha-principal
+tasks:
+  fup@tres: '{rate:100}'
+  fup@resto: '{rate:100}'
 flags:
   painel: 0
   quests: 0
@@ -30,5 +33,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@main-quest
-next_draft_id: 0
+selected: fup@missão-operações
