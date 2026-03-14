@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_13-08-37",
+            "content": "@@ -75,15 +75,14 @@\n , c \n-float64\n+double\n %0A%0A%0A \n@@ -221,11 +221,15 @@\n , area)%0A\n+    \n %0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-03-14_13-09-33",
+            "content": "package main\nimport \"fmt\" \nimport \"math\"\n\nfunc main() {\n    \n\n    var a, b, c float64\n\n\n    fmt.Scan(&a, &b, &c)\n\n    s := (a + b + c) / 2.0\n\n\n    area := math.Sqrt(s * (s - a) * (s - b) * (s - c))\n    fmt.Printf(\"%.2f\\n\", area)\n\n}\n",
+            "lines": "19"
+        }
+    ]
+}
