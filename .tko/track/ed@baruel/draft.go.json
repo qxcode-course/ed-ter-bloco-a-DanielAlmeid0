@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_19-06-54",
+            "content": "@@ -339,26 +339,24 @@\n se%0A%0A    for \n-i \n := 1; i %3C= t\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-15_19-09-30",
+            "content": "@@ -253,20 +253,21 @@\n %3C= total\n-a\n+A\n lbu\n+m\n  %7B%0A     \n@@ -353,36 +353,37 @@\n := 1; i %3C= total\n-a\n+A\n lbu\n+m\n ; i++ %7B%0A        \n@@ -660,20 +660,21 @@\n %3C= total\n-a\n+A\n lbu\n+m\n ; i++ %7B%0A\n@@ -839,29 +839,27 @@\n     %7D%0A    %7D%0A\n-%0A    \n+%7D%0A%0A\n if !faltante\n@@ -882,17 +882,16 @@\n (%22N%22)%0A%7D%0A\n-%0A\n fmt.Prin\n@@ -900,11 +900,4 @@\n n()%0A\n-%0A%7D%0A%0A%0A%0A%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-15_19-12-16",
+            "content": "@@ -638,32 +638,33 @@\n %0A    for i := 1;\n+;\n  i %3C= totalalbu;\n@@ -814,18 +814,18 @@\n   faltan\n-do\n+te\n  = true%0A\n@@ -851,26 +851,26 @@\n   if !faltan\n-do\n+te\n  %7B%0A    fmt.P\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-15_19-13-08",
+            "content": "@@ -405,94 +405,8 @@\n 1 %7B%0A\n-%0A            sobrou := contagem%5Bi%5D - 1%0A%0A            for j := 0; j %3C sobrou; j++ %7B%0A    \n     \n@@ -423,28 +423,24 @@\n  repetida %7B%0A\n-    \n             \n@@ -474,20 +474,10 @@\n     \n-   \n- \n %7D%0A\n-%0A     \n     \n@@ -529,32 +529,8 @@\n rue%0A\n-            %7D%0A        %0A%0A\n     \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-15_19-21-18",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var totalalbu, qtbBaruel int\n    var contagem [51]int\n\n    fmt.Scan(&totalalbu, &qtbBaruel)\n\n    for i := 0; i < qtbBaruel; i++ {\n        var figurinha int\n        fmt.Scan(&figurinha)\n\n        if figurinha <= totalalbu {\n            contagem[figurinha]++\n        }\n    }\n\n    repetida := false\n\n    for i := 1; i <= totalalbu; i++ {\n        if contagem[i] > 1 {\n\n            sobrou := contagem[i] - 1\n\n            for j := 0; j < sobrou; j++ {\n                if repetida {\n                    fmt.Print(\" \")\n                }\n\n                 fmt.Print(i)\n            repetida = true\n            }\n        \n\n        }\n    }\n\n    if !repetida {\n        fmt.Print(\"N\")\n    }\n    fmt.Println()\n\n    faltando := false\n    for i := 1; i <= totalalbu; i++ {\n        if contagem[i] == 0 {\n            if faltando {\n                fmt.Print(\" \")\n            }\n            fmt.Print(i)\n            faltando = true\n        }\n    }\n\n    if !faltando {\n    fmt.Print(\"N\")\n}\n\nfmt.Println()\n\n}\n\n\n\n\n",
+            "lines": "65"
+        }
+    ]
+}

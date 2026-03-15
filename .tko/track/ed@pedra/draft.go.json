@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_17-59-10",
+            "content": "@@ -23,16 +23,29 @@\n %0A%09%22fmt%22%0A\n+%09%22math/bits%22%0A\n )%0Afunc m\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-15_17-59-25",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\nfunc main() {\n    var competidores, A, B int\n    indicevencedor := -1\n    recorde := 90000\n\n    fmt.Scan(&competidores)\n\n\n    for i := 0; i < competidores; i++ {\n        fmt.Scan(&A, &B)\n        \n       if A >= 10 && B >= 10 {\n\n        pontuacao := A - B\n        if pontuacao < 0 {\n            pontuacao = -pontuacao\n        }\n\n        if pontuacao < recorde {\n            recorde = pontuacao\n            indicevencedor = i\n\n        }\n       }\n\n    }\n\n    if indicevencedor != -1 {\n        fmt.Println(indicevencedor)\n    } else {\n        fmt.Println(\"sem ganhador\")\n    }\n}\n",
+            "lines": "38"
+        }
+    ]
+}
