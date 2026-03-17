@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_22-03-43",
+            "content": "@@ -161,32 +161,33 @@\n int%0A%0A    for i :\n+ \n = 0; i %3C quantid\n@@ -250,25 +250,16 @@\n r i := q\n-uantidade\n  - 1; i \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-16_22-05-03",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var quantidade int\n    var direcao string\n\n    fmt.Scan(&quantidade, &direcao)\n\n    var x [1000]int\n    var y [1000]int\n\n    for i := 0; i < quantidade; i++ {\n        fmt.Scan(&x[i], &y[i])\n\n    }\n\n    for i := quantidade - 1; i > 0; i-- {\n        x[i] = x[i-1]\n        y[i] = y[i-1]\n    }\n\n    if direcao == \"U\" {\n        y[0] = y[0] - 1\n    } else if direcao == \"D\" {\n        y[0] = y[0] + 1\n    } else if direcao == \"L\" {\n        x[0] = x[0] - 1\n    } else if direcao == \"R\" {\n        x[0] = x[0] + 1\n    }\n\n    for i := 0; i < quantidade; i++ {\n        fmt.Println(x[i], y[i])\n    \n    }\n}\n",
+            "lines": "36"
+        }
+    ]
+}
