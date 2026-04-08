@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_22-57-25",
+            "content": "@@ -218,8 +218,72 @@\n to)%0A%0A%7D%0A%0A\n+%0Afunc main() %7B%0A    numero := 100%0A    divisaoRecursiva(numero)%0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-07_22-59-41",
+            "content": "@@ -222,100 +222,4 @@\n %0A%7D%0A%0A\n-%0Afunc main() %7B%0A   var numero int%0A    %0A    fmt.Scan(&numero)%0A    %0A    divisaoRecursiva(numero)%0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-04-07_23-01-41",
+            "content": "package main\nimport \"fmt\"\n\nfunc divisaoRecursiva(n int) {\n    \n    if n == 0 {\n        return\n    }\n\n    resultado := n / 2\n    resto := n % 2\n\n    divisaoRecursiva(resultado)\n\n    fmt.Printf(\"%d %d\\n\", resultado, resto)\n\n}\n\n\nfunc main() {\n   var numero int\n    \n    fmt.Scan(&numero)\n    \n    divisaoRecursiva(numero)\n}\n",
+            "lines": "26"
+        }
+    ]
+}
