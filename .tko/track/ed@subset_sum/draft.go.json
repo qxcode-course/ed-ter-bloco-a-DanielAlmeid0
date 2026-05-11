@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-10_23-45-04",
+            "content": "@@ -17,42 +17,13 @@\n ort \n-(%0A    %22bufio%22%0A    %22fmt%22%0A    %22os%22%0A)\n+%22fmt%22\n %0A%0Afu\n@@ -91,17 +91,16 @@\n %0A    for\n- \n _, v := \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-05-10_23-47-41",
+            "content": "@@ -513,24 +513,25 @@\n %7D%0A    if sub\n+e\n setSum(nums,\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-05-10_23-48-13",
+            "content": "@@ -90,53 +90,61 @@\n  int\n-, i, current int) bool %7B%0A   if i %3E= len(\n+) bool %7B%0A    current := 0;%0A    for _, v := range \n nums\n-)\n  %7B%0A \n@@ -149,22 +149,16 @@\n %0A       \n-return\n  current\n@@ -162,24 +162,18 @@\n ent \n-== target\n++= v\n %0A   \n-%7D%0A%0A\n+  \n    i\n@@ -186,9 +186,10 @@\n ent \n-%3E\n+==\n  tar\n@@ -206,168 +206,114 @@\n     \n+    \n return \n-fals\n+tru\n e%0A   \n-%7D%0A%0A   if subsetSum(nums, target, i+1, current+nums%5Bi%5D) %7B%0A       return true%0A   %7D else %7B\n+     %7D%0A        if current %3E target %7B%0A            break%0A        %7D\n %0A    \n+%7D%0A\n    \n+ \n return \n-subsetSum(nums, target, i+1, current)%0A   %7D\n+false\n %0A%7D%0Af\n@@ -503,24 +503,24 @@\n s%5Bi%5D)%0A    %7D%0A\n+\n     if subse\n@@ -535,14 +535,8 @@\n s, k\n-, 0, 0\n ) %7B%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-05-10_23-51-24",
+            "content": "package main\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\nfunc subsetSum(nums []int, target int, i, current int) bool {\n   if i >= len(nums) {\n       return current == target\n   }\n\n   if current > target {\n        return false\n   }\n\n   if subsetSum(nums, target, i+1, current+nums[i]) {\n       return true\n   } else {\n       return subsetSum(nums, target, i+1, current)\n   }\n}\nfunc main() {\n    reader := bufio.NewReader(os.Stdin)\n    var n, k int\n    fmt.Fscan(reader, &n, &k)\n    nums := make([]int, n)\n    for i := range nums {\n        fmt.Fscan(reader, &nums[i])\n    }\n    if subsetSum(nums, k, 0, 0) {\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n}\n",
+            "lines": "36"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-11_00-02-51",
+            "content": "@@ -135,11 +135,11 @@\n  != \n-'.'\n+%22.%22\n  %7B%0A \n@@ -414,26 +414,10 @@\n     \n-    %7D%0A            \n+%7D%0A\n     \n@@ -470,17 +470,16 @@\n     %7D%0A%7D%0A\n-%0A\n %7D%0A    re\n@@ -640,17 +640,16 @@\n ln(solve\n-s\n (%5B%5Dbyte(\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-11_00-07-30",
+            "content": "@@ -45,22 +45,22 @@\n )%0A%0Afunc \n-isSafe\n+solves\n (s %5B%5Dbyt\n@@ -66,33 +66,21 @@\n te, \n-pos, L int, ch byte) bool\n+L int) string\n  %7B%0A \n@@ -90,31 +90,34 @@\n for \n-j\n+i\n  := \n-l, j %3C= L; j\n+0; i %3C len(s); i\n ++ %7B%0A\n-%0A\n     \n@@ -127,36 +127,20 @@\n  if \n-pos-j %3E= 0 && s%5Bpos-j%5D == ch\n+s%5Bi%5D != '.' \n %7B%0A  \n@@ -145,35 +145,31 @@\n             \n-return fals\n+continu\n e%0A        %7D%0A\n@@ -168,25 +168,24 @@\n       %7D%0A\n-%0A\n         \n if pos+j\n@@ -180,334 +180,212 @@\n     \n-if pos+j %3C len(s) && s%5Bpos+j%5D == ch %7B%0A            return false%0A   \n+for d := 0; d %3C= L; d++ %7B%0A            ch := byte('0' + d)%0A\n      \n-%7D%0A\n     \n-%7D%0A\n    \n- return true%0A%7D%0A%0Afunc bt(s %5B%5Dbyte, i, L int) bool %7B%0A    if i == len(s) %7B%0A        return true%0A    %7D%0A    if s%5Bi%5D != '.'%7B%0A        return bt(s, i+1, L)%0A    %7D%0A    for d := 0; d %3C= L; d++ %7B%0A        ch := byte('0' + d)%0A        if isSafe(s, i, L, ch) %7B%0A\n+ok := true%0A            for j := i - 1; j %3E= 0 && j %3E= i - L; j-- %7B%0A                if s%5Bj%5D == ch %7B%0A                    ok = false%0A    \n     \n@@ -396,17 +396,17 @@\n     \n-s%5Bi%5D = ch\n+    break\n %0A   \n@@ -418,73 +418,40 @@\n     \n-if bt(s, i+1, L) %7B%0A                return true%0A            %7D%0A    \n+%7D%0A                %7D%0A    if ok %7B%0A\n     \n@@ -461,19 +461,18 @@\n  s%5Bi%5D = \n-'.'\n+ch\n %0A       \n@@ -476,16 +476,24 @@\n     \n-%7D\n+break\n %0A    %7D%0A\n+%7D%0A%0A%7D\n %0A   \n@@ -500,21 +500,30 @@\n  return \n-false\n+string(s)%0A    \n %0A%7D%0Afunc \n@@ -644,65 +644,41 @@\n     \n-s := %5B%5Dbyte(seq)%0A    bt(s, 0, L)%0A    fmt.Println(string(s\n+fmt.Println(solves(%5B%5Dbyte(seq), L\n ))%0A%7D\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-11_00-20-51",
+            "content": "@@ -107,10 +107,10 @@\n  := \n-1;\n+l,\n  j %3C\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-11_00-24-23",
+            "content": "package main\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc isSafe(s []byte, pos, L int, ch byte) bool {\n    for j := 1; j <= L; j++ {\n\n        if pos-j >= 0 && s[pos-j] == ch{\n            return false\n        }\n\n        if pos+j < len(s) && s[pos+j] == ch {\n            return false\n        }\n    }\n    return true\n}\n\nfunc bt(s []byte, i, L int) bool {\n    if i == len(s) {\n        return true\n    }\n    if s[i] != '.'{\n        return bt(s, i+1, L)\n    }\n    for d := 0; d <= L; d++ {\n        ch := byte('0' + d)\n        if isSafe(s, i, L, ch) {\n            s[i] = ch\n            if bt(s, i+1, L) {\n                return true\n            }\n            s[i] = '.'\n        }\n    }\n\n    return false\n}\nfunc main() {\n    reader := bufio.NewReader(os.Stdin)\n    var seq string\n    var L int\n    fmt.Fscan(reader, &seq, &L)\n    s := []byte(seq)\n    bt(s, 0, L)\n    fmt.Println(string(s))\n}\n",
+            "lines": "50"
+        }
+    ]
+}

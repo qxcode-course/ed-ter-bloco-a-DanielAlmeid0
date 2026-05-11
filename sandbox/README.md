@@ -10,4 +10,5 @@ Sinta-se à vontade para organizar seus rascunhos em subpastas dentro do sandbox
 <!--autoload_cluster=.-->
 - [ ]`@user_001 `[a as todas tarefas cadastradas](user_001/README.md)
 - [ ]`@user_002 `[a as todas tarefas cadastradas](user_002/README.md)
+- [ ]`@user_003 `[Estudo de casa](user_003/README.md)
 
