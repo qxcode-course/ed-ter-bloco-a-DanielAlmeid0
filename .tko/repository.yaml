@@ -18,9 +18,7 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@list
-- ed@vector
+expanded: []
 flags:
   inbox: all
   panel: skills
@@ -28,5 +26,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@list
-selected_index: 12
+selected: fup@if_extra
+selected_index: 14
