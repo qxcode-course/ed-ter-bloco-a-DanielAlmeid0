@@ -1,6 +1,6 @@
 # Tocando fogo na floresta
 
-![_](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/queimada/cover.jpg)
+![_](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/queimada/assets/cover.jpg)
 
 - Seja uma matriz de caracteres que representa um mapa de uma floresta.
 - Cada caractere representa um espaço vazio ou uma árvore.
@@ -21,72 +21,51 @@ Dado a matriz da floresta e o ponto inicial onde começa o fogo, queime as árvo
 
 - A matriz após a queimada acontecer colocando `o` para cada árvore queimada.
 
-## Draft
+## Exemplos
 
-- Você deve implementar a função `tocar_fogo`.
-
-<!-- links .cache/drafts -->
-- cpp
-  - [main.cpp](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/queimada/.cache/drafts/cpp/main.cpp)
-- go
-  - [main.go](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/queimada/.cache/drafts/go/main.go)
-<!-- links -->
-
-## Testes
-
-```txt
->>>>>>>> 01
+<!-- load tests.toml --tests 3 -->
+```py
+>>>>>>>> INSERT
 2 3 1 1
 #.#
 .##
-========
+======== EXPECT
 #.o
 .oo
-<<<<<<<<
+<<<<<<<< FINISH
+```
 
->>>>>>>> 02
+```py
+>>>>>>>> INSERT
 5 5 0 0
 #..#.
 #...#
 ###..
 ..#.#
 ..###
-========
+======== EXPECT
 o..#.
 o...#
 ooo..
 ..o.o
 ..ooo
-<<<<<<<<
+<<<<<<<< FINISH
+```
 
->>>>>>>> 03
+```py
+>>>>>>>> INSERT
 5 7 2 3
 #..#.#.
 #..####
 ####..#
 ..#.#..
 #.###.#
-========
+======== EXPECT
 o..o.o.
 o..oooo
 oooo..o
 ..o.o..
 #.ooo.#
-<<<<<<<<
-
->>>>>>>> 04
-5 7 0 0
-#..#.#.
-#..####
-##.#..#
-..#.#..
-#.###.#
-========
-o..#.#.
-o..####
-oo.#..#
-..#.#..
-#.###.#
-<<<<<<<<
-
+<<<<<<<< FINISH
 ```
+<!-- load -->

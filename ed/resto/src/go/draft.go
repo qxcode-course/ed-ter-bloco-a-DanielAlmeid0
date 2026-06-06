@@ -1,26 +1,24 @@
 package main
 import "fmt"
 
-func divisaoRecursiva(n int) {
-    
+func divisaoEresto(n int) {
     if n == 0 {
         return
     }
 
-    resultado := n / 2
+    quociente := n / 2
     resto := n % 2
 
-    divisaoRecursiva(resultado)
+    divisaoEresto(quociente)
 
-    fmt.Printf("%d %d\n", resultado, resto)
-
+    fmt.Printf("%d %d\n", quociente, resto)
 }
-
-
 func main() {
-   var numero int
-    
-    fmt.Scan(&numero)
-    
-    divisaoRecursiva(numero)
+    var n int
+
+    _, err := fmt.Scan(&n)
+
+    if err == nil {
+        divisaoEresto(n)
+    }
 }

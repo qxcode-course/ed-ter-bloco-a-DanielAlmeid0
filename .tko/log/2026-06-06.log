@@ -1,0 +1,63 @@
+2026-06-06 16:48:06, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 16:48:07, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 16:48:08, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 16:48:09, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 16:48:49, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-06-06 16:48:54, EXEC, v:1, k:ed@fractais_png, mode:FULL, rate:100, size:49
+2026-06-06 16:48:57, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-06-06 16:50:33, MOVE, v:1, k:ed@queimada, mode:DOWN
+2026-06-06 16:50:34, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-06-06 16:48:09, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-06-06 16:48:53, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-06-06 16:50:33, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-06-06 16:50:33, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-06-06 17:06:30, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-06-06 17:08:46, EXEC, v:1, k:ed@fractais_png, mode:FULL, rate:0, size:51
+2026-06-06 17:09:05, EXEC, v:1, k:ed@fractais_png, mode:FULL, rate:100, size:51
+2026-06-06 17:09:32, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-06-06 17:09:36, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-06-06 17:10:05, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-06-06 17:10:40, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-06-06 17:11:26, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:51
+2026-06-06 17:11:34, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-06-06 17:11:39, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:39, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:40, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:40, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:40, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:40, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:41, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:11:41, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-06-06 17:12:20, SELF, v:1, k:ed@queimada, self:1, rate:100, study:4, concept:1
+2026-06-06 17:15:51, MOVE, v:1, k:ed@labirinto, mode:DOWN
+2026-06-06 17:22:48, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-06-06 17:22:49, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:0, size:66
+2026-06-06 17:22:55, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-06-06 17:22:56, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-06-06 17:22:49, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-06-06 17:25:59, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-06-06 17:30:56, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-06-06 17:33:45, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100, size:85
+2026-06-06 17:34:08, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-06-06 17:35:17, SELF, v:1, k:ed@labirinto, self:1, rate:100, study:18, concept:1
+2026-06-06 17:38:57, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-06-06 17:39:01, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 17:39:22, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 17:55:45, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:00:46, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:02:25, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:87
+2026-06-06 18:05:50, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:02:25, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:06:18, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:104
+2026-06-06 18:09:10, EXEC, v:1, k:ed@multiset, mode:FULL, size:118, fail:COMP
+2026-06-06 18:09:06, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:06:17, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:11:32, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:118
+2026-06-06 18:15:48, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:11:32, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:20:45, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:25:24, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-06 18:27:54, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100, size:177
+2026-06-06 18:27:56, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-06-06 18:28:47, SELF, v:1, k:ed@multiset, self:1, rate:100, study:44, concept:1, refactor:1
+2026-06-06 18:28:58, SELF, v:1, k:ed@multiset, self:1, rate:100, study:49, concept:1, refactor:1

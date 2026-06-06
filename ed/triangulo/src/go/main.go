@@ -9,19 +9,22 @@ import (
 )
 
 func processa(vet []int) {
-	_ = vet;
-	if len(vet) < 1 {
+
+	if len(vet) == 0 {
 		return
 	}
 
-	if len(vet) > 1 {
-		auxiliar := make([]int, len(vet)-1)
-		for i := 0; i < len(vet)-1; i++ {
-            auxiliar[i] = vet[i] + vet[i+1]
-        }
-		processa(auxiliar)
+	//vai montar os vetores auxiliares com o resultado das somas 
+	// vetor de cima tem menos 1 elemento q o atual
+	aux := make([]int, len(vet)-1)
+	for i := 0; i < len(vet)-1; i++ {
+		aux[i] = vet[i] + vet[i+1]
 	}
-	fmt.Printf("[ %s ]\n", Join(vet, " "))
+
+	processa(aux)
+	fmt.Println("[ " + Join(vet, " ") + " ]")
+	_ = vet;
+
 }
 
 func main() {
@@ -29,8 +32,11 @@ func main() {
 	if !scanner.Scan() {
 		return
 	}
+
 	line := scanner.Text()
+
 	parts := strings.Fields(line)
+	
 	vet := []int{}
 	for _, part := range parts {
 		if value, err := strconv.Atoi(part); err == nil {

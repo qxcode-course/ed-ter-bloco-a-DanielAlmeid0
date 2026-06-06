@@ -10,62 +10,57 @@ import (
 
 func tostr(vet []int) string {
 	if len(vet) == 0 {
-        return "[]"
-    }
-    
-    var rec func(v []int) string
-    rec = func(v []int) string {
-        if len(v) == 1 {
-            return fmt.Sprintf("%d", v[0])
-        }
-        return fmt.Sprintf("%d, %s", v[0], rec(v[1:]))
-    }
-    
-    return "[" + rec(vet) + "]"
+		return "[]"
+	}
+
+	if len(vet) == 1 {
+		return "[" + strconv.Itoa(vet[0]) + "]"
+	}
+
+	resto := tostr(vet[1:])
+	return "[" + strconv.Itoa(vet[0]) + ", " + resto[1:]
 }
 
 func tostrrev(vet []int) string {
 	if len(vet) == 0 {
-        return "[]"
-    }
+		return "[]"
+	}
+	if len(vet) == 1 {
+		return "[" + strconv.Itoa(vet[0]) + "]"
+	}
 
-    var rec func(v []int) string
-    rec = func(v []int) string {
-        if len(v) == 1 {
-            return fmt.Sprintf("%d", v[0])
-        }
-        // Inverte a ordem: primeiro chama o resto, depois adiciona o atual
-        return fmt.Sprintf("%s, %d", rec(v[1:]), v[0])
-    }
+	resto := tostrrev(vet[1:])
 
-    return "[" + rec(vet) + "]"
+	return resto[:len(resto)-1] + ", " + strconv.Itoa(vet[0]) + "]"
 }
 
 // reverse: inverte os elementos do slice
 func reverse(vet []int) {
 	if len(vet) <= 1 {
-        return
-    }
-    
-    vet[0], vet[len(vet)-1] = vet[len(vet)-1], vet[0]
-    
-    reverse(vet[1 : len(vet)-1])
+		return
+	}
+
+	ultimoIndice := len(vet) - 1
+	vet[0], vet[ultimoIndice] = vet[ultimoIndice], vet[0]
+	reverse(vet[1:ultimoIndice])
 }
 
 // sum: soma dos elementos do slice
 func sum(vet []int) int {
 	if len(vet) == 0 {
-        return 0
-    }
-    return vet[0] + sum(vet[1:])
+		return 0
+	}
+
+	return vet[0] + sum(vet[1:])
 }
 
 // mult: produto dos elementos do slice
 func mult(vet []int) int {
 	if len(vet) == 0 {
-        return 1
-    }
-    return vet[0] * mult(vet[1:])
+		return 1
+	}
+
+	return vet[0] * mult(vet[1:])
 }
 
 // min: retorna o índice e valor do menor valor
@@ -74,26 +69,28 @@ func mult(vet []int) int {
 // para fazer uma recursão que retorna valor e índice
 func min(vet []int) int {
 	if len(vet) == 0 {
-        return -1 
-    }
+		return -1
+	}
 
-    var rec func(v []int, indiceAtual int) int
-    rec = func(v []int, indiceAtual int) int {
+	var rec func(v []int) (int, int)
+	rec = func(v []int) (int, int){
+		if len(v) == 1 {
+			return 0, v[0]
+		}
 
-        if indiceAtual == len(vet)-1 {
-            return indiceAtual
-        }
+		idxResto, valResto := rec(v[1:])
 
-        indiceMenorDoResto := rec(v, indiceAtual+1)
+		idxResto += 1
 
-        
-        if vet[indiceAtual] < vet[indiceMenorDoResto] {
-            return indiceAtual
-        }
-        return indiceMenorDoResto
-    }
+		if v[0] <= valResto {
+			return 0, v[0]
+		}
 
-    return rec(vet, 0)
+		return idxResto, valResto
+	}
+
+	indice, _ := rec(vet)
+	return indice
 }
 
 func main() {

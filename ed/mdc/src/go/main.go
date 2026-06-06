@@ -5,12 +5,17 @@ import (
 )
 
 func mdc(a, b int) int {
+	if a == 0 {
+		return b
+	}
 
 	if b == 0 {
 		return a
 	}
-	
-	return mdc(b, a%b)
+
+	r := a % b
+
+	return mdc(b, r)
 }
 
 func main() {

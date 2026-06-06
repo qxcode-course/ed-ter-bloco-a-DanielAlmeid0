@@ -7,8 +7,11 @@ import (
 )
 
 func burnTrees(grid [][]rune, l, c int) {
-	_, _, _ = grid, l, c
-	if l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) {
+	
+	nl := len(grid)
+	nc := len(grid[0])
+
+	if l < 0 || l >= nl || c < 0 || c >= nc {
 		return
 	}
 
@@ -18,11 +21,10 @@ func burnTrees(grid [][]rune, l, c int) {
 
 	grid[l][c] = 'o'
 
-	
-	burnTrees(grid, l-1, c) 
-	burnTrees(grid, l+1, c) 
-	burnTrees(grid, l, c-1) 
-	burnTrees(grid, l, c+1) 
+	burnTrees(grid, l-1, c)
+	burnTrees(grid, l+1, c)
+	burnTrees(grid, l, c-1)
+	burnTrees(grid, l, c+1)
 }
 
 func main() {
