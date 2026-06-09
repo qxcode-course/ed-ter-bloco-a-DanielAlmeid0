@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-09_12-18-34",
+            "content": "package main\nimport (\"fmt\"\n        \"bufio\"\n        \"os\"\n)\n\ntype Editor struct {\n    left []rune\n    right []rune\n}\n\nfunc (e *Editor) processaComando(cmd rune){\n    switch cmd {\n    case 'R':\n        e.left = append(e.left, '\\n')\n\n    case 'B':\n        if len(e.left) > 0 {\n        e.left = e.left[:len(e.left)-1]\n    }\n    case 'D':\n        if len(e.left) > 0 {\n            e.right = e.right[:len(e.right)-1]\n        }\n    case '<':\n        if len(e.left) > 0 {\n            ch := e.left[len(e.left)-1]\n            e.left = e.left[:len(e.left)-1]\n            e.right = append(e.right, ch)\n        }\n    case '>':\n        if len(e.right) > 0 {\n            ch := e.right[len(e.right)-1]\n            e.right = e.right[:len(e.right)-1]\n            e.left = append(e.left, ch)\n        }\n    default:\n        e.left = append(e.left, cmd)\n    }\n}\n\nfunc (e *Editor) Print() {\n    var out []rune\n\n    out = append(out, e.left...)\n\n    out = append(out, '|')\n\n    for i := len(e.right) - 1; i >= 0; i-- {\n        out = append(out, e.right[i])\n    }\n\n    fmt.Println(string(out))\n}\n\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n\n    if scanner.Scan() {\n        input := scanner.Text()\n        editor := &Editor{}\n\n        for _, char := range input {\n            editor.processaComando(char)\n        }\n\n        editor.Print()\n    }\n}\n",
+            "lines": "70"
+        }
+    ]
+}

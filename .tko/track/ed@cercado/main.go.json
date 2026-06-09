@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-09_13-32-39",
+            "content": "@@ -437,25 +437,25 @@\n l %3C linhas; \n-c\n+l\n ++ %7B%0A%09%09if bo\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-09_13-39-32",
+            "content": "@@ -421,25 +421,25 @@\n %7D%0A%0A%09for \n-c\n+l\n  := 0; \n-c\n+l\n  %3C linha\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-09_13-39-51",
+            "content": "@@ -462,12 +462,12 @@\n ard%5B\n-0%5D%5Bc\n+l%5D%5B0\n %5D ==\n@@ -484,12 +484,12 @@\n dfs(\n-0, c\n+l, 0\n )%0A%09%09\n@@ -506,19 +506,20 @@\n rd%5Bl\n-inh\n+%5D%5Bcolun\n as-1%5D\n-%5Bc%5D\n  == \n@@ -536,18 +536,19 @@\n fs(l\n-inh\n+, colun\n as-1\n-, c\n )%0A%09%09\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-09_13-40-57",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\n\tlinhas := len(board)\n\tcolunas := len(board[0])\n\n\tvar dfs func(l, c int)\n\tdfs = func(l, c int) {\n\t\tif l < 0 || l >= linhas || c < 0 || c >= colunas || board[l][c] != 'O' {\n\t\t\treturn\n\t\t}\n\n\t\tboard[l][c] = 'S'\n\n\t\tdfs(l-1, c)\n\t\tdfs(l+1, c)\n\t\tdfs(l, c-1)\n\t\tdfs(l, c+1)\n\t}\n\n\tfor c := 0; c < linhas; c++ {\n\t\tif board[0][c] == 'O' {\n\t\t\tdfs(0, c)\n\t\t}\n\t\tif board[linhas-1][c] == 'O' {\n\t\t\tdfs(linhas-1, c)\n\t\t}\n\t}\n\n\tfor l := 0; l < linhas; l++ {\n\t\tfor c := 0; c < colunas; c++ {\n\t\t\tif board[l][c] == 'O' {\n\t\t\t\tboard[l][c] = 'X'\n\t\t\t} else if board[l][c] == 'S' {\n\t\t\t\tboard[l][c] = 'O'\n\t\t\t}\n\t\t}\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "67"
+        }
+    ]
+}
