@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_21-17-16",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaBlocos(n int) int {\n    if n == 1 {\n        return 20\n    }\n\n    return calculaBlocos(n-1) + 8\n}\nfunc main() {\n    var n int\n\n    _, err := fmt.Scan(&n)\n    if err != nil {\n        return\n    }\n\n    resultado := calculaBlocos(n)\n\n    fmt.Println(resultado)\n}\n",
+            "lines": "22"
+        }
+    ]
+}

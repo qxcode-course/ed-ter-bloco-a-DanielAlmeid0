@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_18-41-59",
+            "content": "@@ -124,16 +124,17 @@\n  i := 2;\n+;\n  i*i %3C= \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-23_18-45-06",
+            "content": "@@ -546,18 +546,17 @@\n gs.Join(\n-pr\n+%C5%95\n imos, %22,\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-23_18-45-33",
+            "content": "@@ -38,22 +38,8 @@\n nv%22%0A\n-    %22strings%22%0A\n )%0A%0Af\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-23_18-46-10",
+            "content": "@@ -599,10 +599,8 @@\n %5B%25s%5D\n-%5Cn\n %22, t\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-06-23_18-46-28",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n    \"strings\"\n)\n\nfunc eh_primo(x int) bool {\n    if x <= 1 {\n        return false\n    }\n\n    for i := 2; i*i <= x; i++ {\n        if x%i == 0 {\n            return false\n        }\n    }\n    return true\n}\nfunc main() {\n    var n int\n    _, err := fmt.Scan(&n)\n    if err != nil {\n        return\n    }\n\n    primos := make([]string, 0, n)\n    atual := 2\n\n    for len(primos) < n {\n        if eh_primo(atual) {\n            primos = append(primos, strconv.Itoa(atual))\n        }\n        atual++\n    }\n\n    textoFinal := strings.Join(primos, \", \")\n\n    fmt.Printf(\"[%s]\\n\", textoFinal)\n}\n",
+            "lines": "41"
+        }
+    ]
+}

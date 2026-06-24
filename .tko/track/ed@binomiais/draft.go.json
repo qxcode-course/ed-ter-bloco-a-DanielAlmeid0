@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_20-41-07",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaCombinacao(n, k int) int {\n\n    if k < 0 || k > n {\n        return 0\n    }\n\n    if k > n-k {\n        k = n - k \n    }\n\n    dp := make([]int, k+1)\n    dp[0] = 1\n\n    for i := 1; i <= n; i++ {\n        for j := k; j > 0; j-- {\n            dp[j] = dp[j] + dp[j-1]\n        }\n    }\n    return dp[k]\n}\nfunc main() {\n    var n, k int\n\n    _, err := fmt.Scan(&n, &k)\n    if err != nil {\n        return\n    }\n\n    resultado := calculaCombinacao(n, k)\n    fmt.Println(resultado)\n}\n",
+            "lines": "34"
+        }
+    ]
+}

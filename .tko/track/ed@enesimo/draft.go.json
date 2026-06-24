@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_18-29-02",
+            "content": "@@ -430,18 +430,16 @@\n contador\n-+1\n )%0A    %7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-23_18-29-48",
+            "content": "@@ -487,16 +487,18 @@\n contador\n++1\n )%0A%7D%0Afunc\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-23_18-29-56",
+            "content": "package main\nimport \"fmt\"\n\nfunc eh_primo(x int, div int) bool {\n    if x <= 1 {\n        return false\n    }\n\n    if div == x {\n        return true\n    }\n\n    if x%div == 0 {\n        return false\n    }\n\n    return eh_primo(x, div+1)\n}\n\nfunc busca_primo(alvo int, atual int, contador int) int {\n\n    if eh_primo(atual, 2) {\n        if contador == alvo {\n            return atual\n        }\n\n        return busca_primo(alvo, atual+1, contador+1)\n    }\n\n    return busca_primo(alvo, atual+1, contador)\n}\nfunc main() {\n    var n int \n\n    _, err := fmt.Scan(&n)\n    if err != nil {\n        return\n    }\n\n    resultado := busca_primo(n, 2, 1)\n\n    fmt.Println(resultado)\n}\n",
+            "lines": "43"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{"ts":1782259045,"hash":"290f5f19ecfad69ac341c963326a050857370b0dba9bc623f79c4e571e0e4c22","mode":"full","content":"H4sIAAAAAAAC/ytITM5OTE9VyE3MzOPKzC3ILypRUErLLVHi4korzUtWgJAgWQ1NhWouBSAAyuoFFGXmleTkaSh5pObk5OsohOcX5aQoKmly1XIBAOvNfj5SAAAA"}
+{"ts":1782259083,"hash":"3c81132fe19670a1885d3152dbeb8772a87978ec3667c98840695835e2d3085c","mode":"diff","ops":[{"tag":"replace","a1":3,"a2":4,"text":"func diagonal(s string, k int) {\n    if len(s) == 0 {\n        return\n    }\n}\n"}]}
+{"ts":1782259106,"hash":"c87fd615c81d9b918790abfd9bcfd1204237ddb45b154610c960dbf9f21080bc","mode":"diff","ops":[{"tag":"insert","a1":7,"a2":7,"text":"\n    for i := 0; i < k\n"}]}
+{"ts":1782259146,"hash":"84c848b623d019edc643e49a5f4b3206bf1e81fec1087a8b431d6f27809144a3","mode":"diff","ops":[{"tag":"replace","a1":8,"a2":9,"text":"    for i := 0; i < k; i ++ {\n        fmt.Print(\"\")\n    }\n\n    fmt.Printf(\"%c\\n\")\n"}]}
+{"ts":1782259186,"hash":"493beb5ae4383a4a712b542e48e11228dfd77c8c4d49c0c059afa176784595f0","mode":"diff","ops":[{"tag":"replace","a1":12,"a2":13,"text":"    fmt.Printf(\"%c\\n\", s[0])\n\n    diagonal(s[1:], k+1)\n"}]}
+{"ts":1782259206,"hash":"6aa02b0ad1f0171ae5d80afcd700348acd35bdf6bb9b3fb0e7dcbd70782d93b1","mode":"diff","ops":[{"tag":"replace","a1":17,"a2":18,"text":"    var \n"}]}
+{"ts":1782259226,"hash":"27994baea8e89ec294af4c013e5ee6ee2eb5a3ed7371d0a5f997947c6be8b8d2","mode":"diff","ops":[{"tag":"replace","a1":17,"a2":18,"text":"    var palavra string\n\n    _, err := fmt.\n"}]}
+{"ts":1782259266,"hash":"f2d7cb861531fa926c3874af98cc4a778ea58107d0e64657fb77ed202b6933e9","mode":"diff","ops":[{"tag":"replace","a1":19,"a2":20,"text":"    _, err := fmt.Scan(&palavra)\n    if err != nil {\n        return\n    }\n"}]}
+{"ts":1782259295,"hash":"6a5ede85246b8d73c86e33fe9af88345cb40fb5ce8519ec47210eda5603ec132","mode":"diff","ops":[{"tag":"insert","a1":15,"a2":15,"text":"    \n"},{"tag":"insert","a1":23,"a2":23,"text":"\n    diagonal(palavra, 0)\n"}]}

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_19-33-59",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaManeiras(n int) int {\n    if n == 1 {\n        return 1\n    }\n    if n == 2 {\n        return 1\n    }\n    if n == 3 {\n        return 2\n    }\n\n    x1, x2, x3 := 1, 1, 2\n    var atual int\n\n    for i := 4; i <= n; i++ {\n        atual = x3 + x1\n\n        x1 = x2\n        x2 = x3\n        x3 = atual\n    }\n    return atual\n}\nfunc main() {\n    var n int\n\n    _, err := fmt.Scan(&n)\n    if err != nil {\n        return\n    }\n\n    resultado := calculaManeiras(n)\n    fmt.Println(resultado)\n}\n",
+            "lines": "37"
+        }
+    ]
+}
