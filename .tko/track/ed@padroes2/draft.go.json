@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_18-38-02",
+            "content": " package main\nimport \"fmt\"\n\nfunc calculaPecas(n int) int {\n    if n == 1 {\n        return 3\n    }\n\n    return calculaPecas(n-1) + (2*n + 1)\n}\n\n\nfunc main() {\n    var n int\n\n    _ , err := fmt.Scan(&n)\n    if err != nil {\n        return\n    }\n\n    resultado := calculaPecas(n)\n    fmt.Println(resultado)\n}\n",
+            "lines": "23"
+        }
+    ]
+}

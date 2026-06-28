@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_20-59-22",
+            "content": "@@ -64,16 +64,17 @@\n 64 %7B%0A   \n+ \n if n == \n@@ -77,16 +77,20 @@\n  == 0 %7B%0A\n+    \n     retu\n@@ -99,19 +99,21 @@\n  0.0%0A   \n+ \n %7D%0A%0A\n+ \n    dinhe\n@@ -141,16 +141,17 @@\n -1, c)%0A%0A\n+ \n    dinhe\n@@ -191,16 +191,17 @@\n  / 2.0%0A%0A\n+ \n    retur\n@@ -395,12 +395,23 @@\n %22%25.2f%5Cn%22\n+, resultado\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_22-06-34",
+            "content": "@@ -390,19 +390,8 @@\n f%5Cn%22\n-, resultado\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_22-06-47",
+            "content": "package main\nimport \"fmt\"\n\nfunc milagre(n int, c float64) float64 {\n   if n == 0 {\n    return 0.0\n   }\n\n   dinheiroSaida := milagre(n-1, c)\n\n   dinheiroEntrada := (dinheiroSaida + c) / 2.0\n\n   return dinheiroEntrada\n}\nfunc main() {\n    var n int\n    var c float64\n\n    _, err := fmt.Scan(&n, &c)\n    if err != nil {\n        return\n    }\n\n    resultado := milagre(n, c)\n\n    fmt.Printf(\"%.2f\\n\", resultado)\n}\n",
+            "lines": "27"
+        }
+    ]
+}

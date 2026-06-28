@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_20-04-34",
+            "content": "@@ -165,17 +165,17 @@\n elhos(n-\n-2\n+1\n , k)%0A%7D%0Af\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-27_20-05-01",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaCoelhos(n int, k int) int {\n    if n == 1 || n == 2 {\n        return 1\n    }\n\n    return calculaCoelhos(n-1, k) + k*calculaCoelhos(n-2, k)\n}\nfunc main() {\n    var n, k int\n\n    _, err := fmt.Scan(&n, &k)\n    if err != nil {\n        return\n    }\n\n    resultado := calculaCoelhos(n, k)\n    fmt.Println(resultado)\n}\n",
+            "lines": "21"
+        }
+    ]
+}

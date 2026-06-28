@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_19-01-47",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaPontos(n int, m int) int {\n    if m == 1 {\n        return 1\n    }\n\n    pontosNovos := (m - 1) * (n - 2) + 1\n\n    return calculaPontos(n, m-1) + pontosNovos\n}\nfunc main() {\n    var n, m int\n\n    _, err := fmt.Scan(&n, &m)\n    if err != nil {\n        return\n    }\n\n    resultado := calculaPontos(n, m)\n    fmt.Println(resultado)\n}\n",
+            "lines": "23"
+        }
+    ]
+}

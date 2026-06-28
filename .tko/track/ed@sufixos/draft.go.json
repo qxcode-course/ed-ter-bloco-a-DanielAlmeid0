@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_22-27-03",
+            "content": " package main\nimport \"fmt\"\n\nfunc printSufixos(s string) {\n    if len(s) == 0 {\n        return\n    }\n\n    printSufixos(s[1:])\n    fmt.Println(s)\n}\nfunc main() {\n    var palavra string\n\n    _, err := fmt.Scan(&palavra)\n    if err != nil {\n        return\n    }\n\n    printSufixos(palavra)\n}\n",
+            "lines": "21"
+        }
+    ]
+}

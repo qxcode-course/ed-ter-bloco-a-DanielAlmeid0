@@ -28,5 +28,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@map_set
-selected_index: 2
+selected: ed@linear
+selected_index: 6

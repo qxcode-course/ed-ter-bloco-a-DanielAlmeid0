@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_19-36-24",
+            "content": "@@ -137,33 +137,32 @@\n fmt.Printf(%22%25d%5E2\n- \n = %25d%5E2 + 2*%25d + \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-27_19-36-40",
+            "content": "@@ -321,18 +321,17 @@\n d + 1 = \n-%25d\n+?\n %5Cn%22, n, \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-27_19-37-17",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaQuadrado(n int) int {\n    if n == 1 {\n        fmt.Println(\"1^2 = 1\")\n        return 1\n    }\n\n    fmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = ?\\n\", n, n-1, n-1)\n\n    valorAnterior := calculaQuadrado(n-1)\n\n    resultadoAtual := valorAnterior + 2*(n-1) + 1\n\n    fmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = %d\\n\", n, n-1, n-1, resultadoAtual)\n\n    return resultadoAtual\n}\nfunc main() {\n    var n int \n\n    _, err := fmt.Scan(&n)\n    if err != nil {\n        return\n    }\n\n    calculaQuadrado(n)\n}\n",
+            "lines": "29"
+        }
+    ]
+}

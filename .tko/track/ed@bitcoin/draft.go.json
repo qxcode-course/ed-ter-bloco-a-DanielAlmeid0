@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_22-15-44",
+            "content": "package main\nimport \"fmt\"\n\nfunc numAtivos(n int, k int) int {\n    if n <= k {\n        return 1\n    }\n\n    metadeCima := (n + 1) / 2\n    metadeBaixo := n / 2\n\n    return numAtivos(metadeCima, k) + numAtivos(metadeBaixo, k)\n}\nfunc main() {\n    var n, k int\n\n    _, err := fmt.Scan(&n, &k)\n    if err != nil {\n        return\n    }\n\n    resultado := numAtivos(n, k)\n    fmt.Println(resultado)\n}\n",
+            "lines": "24"
+        }
+    ]
+}
