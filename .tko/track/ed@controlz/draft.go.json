@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_17-46-09",
+            "content": "@@ -795,233 +795,7 @@\n    %7D\n-%0A%0A    finalText := make(%5B%5Drune, 0, len(text)+1)%0A    finalText = append(finalText, text%5B:cursor%5D...)%0A    finalText = append(finalText, '%7C')%0A    finalText = append(finalText, text%5Bcursor:%5D...)%0A%0A    fmt.Println(string(finalText))\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-29_17-49-03",
+            "content": "@@ -38,16 +38,32 @@\n %22%0A%09%22os%22%0A\n+%09%22text/scanner%22%0A\n )%0A%0Atype \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-06-29_17-49-20",
+            "content": "@@ -764,513 +764,17 @@\n r++%0A\n-%0A            //case B:%0A%0A        case 'Z':%0A            if len(undoStack) %3E 0 %7B%0A                tCopy := make(%5B%5Drune, len(text))%0A                copy(tCopy, text)%0A                redoStack = append(redoStack, State%7Btext: tCopy, cursor: cursor%7D)%0A%0A                last := undoStack%5Blen(undoStack)-1%5D%0A                undoStack = undoStack%5B:len(undoStack)-1%5D%0A%0A                text = make(%5B%5Drune, len(last.text))%0A                copy(text, last.text)%0A                cursor = last.cursor%0A            %7D%0A        %7D%0A\n+        %7D\n %0A   \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-06-29_17-55-42",
+            "content": "@@ -773,175 +773,21 @@\n     \n+    //\n case B:\n-%0A            if cursor %3E 0 %7B%0A                saveState()%0A                text = append(text%5B:cursor-1%5D, text%5Bcursor:%5D...)%0A                cursor--%0A            %7D\n %0A%0A  \n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-06-29_17-57-39",
+            "content": "@@ -778,11 +778,9 @@\n ase \n-'B'\n+B\n :%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-29_17-57-49",
+            "content": "@@ -944,102 +944,8 @@\n  %7D%0A%0A\n-        case 'D':%0A            if cursor %3C len(text) %7B%0A                cursor++%0A            %7D%0A%0A\n     \n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-29_18-05-57",
+            "content": "@@ -1036,102 +1036,8 @@\n    %7D\n-%0A        %0A        case '%3C':%0A            if cursor %3E 0 %7B%0A                cursor--%0A            %7D\n %0A%0A  \n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-06-29_18-06-30",
+            "content": "@@ -1130,110 +1130,8 @@\n    %7D\n-%0A        %0A        case '%3E':%0A            if cursor %3C len(text) %7B%0A                cursor++%0A            %7D\n %0A%0A  \n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-29_18-07-10",
+            "content": "@@ -1225,33 +1225,25 @@\n           %7D%0A\n-        \n %0A\n+\n         case\n@@ -1284,17 +1284,16 @@\n ) %3E 0 %7B%0A\n-%0A\n         \n@@ -1705,652 +1705,8 @@\n   %7D%0A\n-%0A        case 'Y':%0A            if len(redoStack) %3E 0 %7B%0A               tCopy := make(%5B%5Drune, len(text))%0A               copy(tCopy, text)%0A               undoStack = append(undoStack, State%7Btext: tCopy, cursor: cursor%7D)%0A%0A               last := redoStack%5Blen(redoStack)-1%5D%0A               redoStack = redoStack%5B:len(redoStack)-1%5D%0A%0A               text = make(%5B%5Drune, len(last.text))%0A               copy(text, last.text)%0A               cursor = last.cursor%0A            %7D%0A        default:%0A            saveState()%0A            text = append(text, 0)%0A            copy(text%5Bcursor+1:%5D, text%5Bcursor:%5D)%0A            text%5Bcursor%5D = ch%0A            cursor++%0A    \n     \n@@ -1707,24 +1707,25 @@\n %7D%0A        %7D%0A\n+%0A\n     %7D%0A%0A    f\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-06-29_18-20-37",
+            "content": "@@ -1014,85 +1014,16 @@\n     \n-saveState()%0A%0A                text = append(text%5B:cursor%5D, text%5Bcursor+1:%5D...)\n+cursor++\n %0A   \n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-29_18-30-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype State struct {\n    text []rune\n    cursor int\n}\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    if !scanner.Scan() {\n        return\n    }\n    input := scanner.Text()\n\n    var text []rune\n    cursor := 0\n    var undoStack []State\n    var redoStack []State\n\n    saveState := func() {\n\n        tCopy := make([]rune, len(text))\n        copy(tCopy, text)\n\n        undoStack = append(undoStack, State{text: tCopy, cursor: cursor})\n        redoStack = []State{}\n    }\n\n    for _, ch := range input {\n        switch ch {\n        case 'R': //O enter\n            saveState()\n            text = append(text, 0)\n            copy(text[cursor+1:], text[cursor:])\n            text[cursor] = '\\n'\n            cursor++\n\n        case 'B':\n            if cursor > 0 {\n                saveState()\n                text = append(text[:cursor-1], text[cursor:]...)\n                cursor--\n            }\n\n        case 'D':\n            if cursor < len(text) {\n                saveState()\n\n                text = append(text[:cursor], text[cursor+1:]...)\n            }\n        \n        case '<':\n            if cursor > 0 {\n                cursor--\n            }\n        \n        case '>':\n            if cursor < len(text) {\n                cursor++\n            }\n        \n        case 'Z':\n            if len(undoStack) > 0 {\n\n                tCopy := make([]rune, len(text))\n                copy(tCopy, text)\n                redoStack = append(redoStack, State{text: tCopy, cursor: cursor})\n\n                last := undoStack[len(undoStack)-1]\n                undoStack = undoStack[:len(undoStack)-1]\n\n                text = make([]rune, len(last.text))\n                copy(text, last.text)\n                cursor = last.cursor\n            }\n\n        case 'Y':\n            if len(redoStack) > 0 {\n               tCopy := make([]rune, len(text))\n               copy(tCopy, text)\n               undoStack = append(undoStack, State{text: tCopy, cursor: cursor})\n\n               last := redoStack[len(redoStack)-1]\n               redoStack = redoStack[:len(redoStack)-1]\n\n               text = make([]rune, len(last.text))\n               copy(text, last.text)\n               cursor = last.cursor\n            }\n        default:\n            saveState()\n            text = append(text, 0)\n            copy(text[cursor+1:], text[cursor:])\n            text[cursor] = ch\n            cursor++\n            }\n    }\n\n    finalText := make([]rune, 0, len(text)+1)\n    finalText = append(finalText, text[:cursor]...)\n    finalText = append(finalText, '|')\n    finalText = append(finalText, text[cursor:]...)\n\n    fmt.Println(string(finalText))\n}\n",
+            "lines": "110"
+        }
+    ]
+}

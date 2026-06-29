@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_18-41-34",
+            "content": "@@ -506,82 +506,16 @@\n %5D %7B%0A\n-%09passo := it.next%0A%0A%09if passo == l.root %7B%0A%09%09passo = passo.next%0A%09%7D%0A%0A\n %09return \n pass\n@@ -514,13 +514,11 @@\n urn \n-passo\n+nil\n %0A%7D%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-29_18-42-26",
+            "content": "@@ -263,25 +263,24 @@\n , fmt.Sprint\n-f\n (%22%25d%3E%22, n.Va\n@@ -620,17 +620,16 @@\n sen int%0A\n-%0A\n %09fmt.Sca\n@@ -919,17 +919,16 @@\n ord)%0A%09%7D%0A\n-%0A\n %09fmt.Pri\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-06-29_18-43-11",
+            "content": "@@ -647,16 +647,42 @@\n chosen)%0A\n+%09fmt.Println(qtd, chosen)%0A\n %09l := Ne\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-29_18-46-27",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tvalues := []string{}\n\n\tfor n := l.root.next; n != l.root; n = n.next {\n\t\tif n == sword {\n\t\t\tvalues = append(values, fmt.Sprintf(\"%d>\", n.Value))\n\t\t} else {\n\t\t\tvalues = append(values, fmt.Sprintf(\"%d\", n.Value))\n\t\t}\n\t}\n\treturn \"[ \" + strings.Join(values, \" \") + \" ]\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tpasso := it.next\n\n\tif passo == l.root {\n\t\tpasso = passo.next\n\t}\n\n\treturn passo\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\n\tfmt.Scan(&qtd, &chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "52"
+        }
+    ]
+}

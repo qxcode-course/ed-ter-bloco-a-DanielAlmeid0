@@ -7,8 +7,23 @@
         },
         {
             "label": "2026-06-13_01-12-46",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tleft := 0\n\tright := len(slice) - 1\n\n\tfor left <= right {\n\t\tmid := left + (right-left)/2\n\n\t\tif slice[mid] == value {\n\t\t\tfor i := mid; i < len(slice); i++ {\n\t\t\t\tif slice[i] != value {\n\t\t\t\t\treturn i - 1\n\t\t\t\t}\n\t\t\t}\n\n\t\t\treturn len(slice) - 1\n\t\t}\n\n\t\tif slice[mid] < value {\n\t\t\tleft = mid + 1\n\t\t} else {\n\t\t\tright = mid - 1\n\t\t}\n\t}\n\treturn left\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "content": "@@ -115,133 +115,92 @@\n  %7B%0A%09\n-esquerda := 0%0A%09direita := len(slice) - 1%0A%09foundIndex := -1%0A%0A%09for esquerda %3C= direita\n+left := 0%0A%09right := len(slice) - 1%0A%0A%09for left %3C= right\n  %7B%0A%09%09m\n-eio\n+id\n  := \n-esquerda + (esquerda-direita\n+left + (right-left\n )/2%0A\n@@ -212,19 +212,18 @@\n  slice%5Bm\n-eio\n+id\n %5D == val\n@@ -236,42 +236,46 @@\n %09%09fo\n-undIndex = meio%0A%09%09%09break%0A%09%09%7D else \n+r i := mid; i %3C len(slice); i++ %7B%0A%09%09%09%09\n if s\n@@ -283,15 +283,13 @@\n ice%5B\n-meio%5D %3C\n+i%5D !=\n  val\n@@ -300,210 +300,145 @@\n %0A%09%09%09\n-esquerda = meio + 1%0A%09%09%7D else %7B%0A%09%09%09direita = meio - 1\n+%09%09return i - 1%0A%09%09%09%09%7D\n %0A%09%09\n-%7D%0A\n %09%7D%0A%0A\n-%0A%09if foundIndex != -1 %7B%0A%09%09ultimo := foundIndex%0A%09%09for ultimo+1 %3C len(slice) && slice%5Bultimo+1%5D == value %7B%0A%09%09%09ultimo++%0A%09%09%7D%0A%09%09return ultimo%0A\n+%09%09%09return len(slice) - 1%0A%09%09%7D%0A%0A%09%09if slice%5Bmid%5D %3C value %7B%0A%09%09%09left = mid + 1%0A%09%09%7D else %7B%0A%09%09%09right = mid - 1%0A%09\n %09%7D%0A%09\n+%7D\n %0A%09re\n@@ -446,16 +446,12 @@\n urn \n-esquerda\n+left\n %0A%7D%0A%0A\n",
             "lines": "51"
+        },
+        {
+            "label": "2026-06-29_17-24-14",
+            "content": "@@ -612,17 +612,16 @@\n .Stdin)%0A\n-%0A\n %09scanner\n@@ -697,17 +697,16 @@\n , 0, 1)%0A\n-%0A\n %09for _, \n@@ -871,18 +871,16 @@\n Text())%0A\n-%09%0A\n %09result \n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-06-29_17-25-02",
+            "content": "@@ -224,23 +224,23 @@\n  + (\n-direita-esquerd\n+esquerda-direit\n a)/2\n@@ -873,16 +873,17 @@\n Text())%0A\n+%09\n %0A%09result\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-06-29_17-25-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tesquerda := 0\n\tdireita := len(slice) - 1\n\tfoundIndex := -1\n\n\tfor esquerda <= direita {\n\t\tmeio := esquerda + (direita-esquerda)/2\n\n\t\tif slice[meio] == value {\n\t\t\tfoundIndex = meio\n\t\t\tbreak\n\t\t} else if slice[meio] < value {\n\t\t\tesquerda = meio + 1\n\t\t} else {\n\t\t\tdireita = meio - 1\n\t\t}\n\t}\n\n\n\tif foundIndex != -1 {\n\t\tultimo := foundIndex\n\t\tfor ultimo+1 < len(slice) && slice[ultimo+1] == value {\n\t\t\tultimo++\n\t\t}\n\t\treturn ultimo\n\t}\n\t\n\treturn esquerda\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "58"
         }
     ]
 }

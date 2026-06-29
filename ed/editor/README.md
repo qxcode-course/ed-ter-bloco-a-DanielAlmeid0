@@ -1,6 +1,6 @@
 # Editor de texto
 
-![_](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/editor/assets/cover.jpg)
+![_](assets/cover.jpg)
 
 Implementar um editor de texto simplificado que receba os seguintes valores como
 entrada.
