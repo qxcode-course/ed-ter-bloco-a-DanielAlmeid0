@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_12-06-46",
+            "content": "@@ -1258,49 +1258,8 @@\n e %7B%0A\n-%09if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%09%0A\n %09ele\n@@ -1623,25 +1623,109 @@\n %22%22) \n-%0A%09MyShow(root, 0) \n+// Chama a fun%C3%A7%C3%A3o de impress%C3%A3o formatada%0A%09MyShow(root, 0) // Chama a fun%C3%A7%C3%A3o de impress%C3%A3o personalizada\n %0A%7D%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-04_12-08-39",
+            "content": "@@ -1343,53 +1343,8 @@\n 1:%5D%0A\n-%0A%09if elem == %22%22 %7B%0A%09%09return create(parts)%0A%09%7D%0A%0A\n %09if \n@@ -1502,18 +1502,16 @@\n rn node%0A\n-%09%0A\n %7D%0A%0Afunc \n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-04_12-10-36",
+            "content": "@@ -512,17 +512,16 @@\n eat(%22...\n-.\n %22, nivel\n@@ -1547,16 +1547,17 @@\n rn node%0A\n+%09\n %0A%7D%0A%0Afunc\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-07-04_12-13-19",
+            "content": "@@ -395,33 +395,32 @@\n ings.Repeat(%22...\n-.\n %22, nivel))%0A%09%09fmt\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-07-04_12-13-32",
+            "content": "@@ -256,33 +256,32 @@\n ings.Repeat(%22...\n-.\n %22, nivel))%0A%09%09fmt\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-07-04_12-15-29",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// MyShow imprime a \u00e1rvore bin\u00e1ria de forma formatada.\nfunc MyShow(node *Node, nivel int) {\n\tif node == nil {\n\t\tfmt.Print(strings.Repeat(\"....\", nivel))\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\n\tehFolha := node.Left == nil && node.Right == nil\n\n\tif ehFolha {\n\t\tfmt.Print(strings.Repeat(\"....\", nivel))\n\t\tfmt.Println(node.Value)\n\t} else {\n\n\t\tMyShow(node.Left, nivel+1)\n\n\t\tfmt.Print(strings.Repeat(\"....\", nivel))\n\t\tfmt.Println(node.Value)\n\n\t\tMyShow(node.Right, nivel+1)\n\t}\n}\n// -----------------------------------------------------------------------------------\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\tif len(*parts) == 0 {\n\t\treturn nil\n\t}\n\t\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\n\tif elem == \"\" {\n\t\treturn create(parts)\n\t}\n\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\troot := create(&parts)\n\tBShow(root, \"\") \n\tMyShow(root, 0) \n}\n",
+            "lines": "100"
+        }
+    ]
+}
