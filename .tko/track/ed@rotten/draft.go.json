@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_21-19-20",
+            "content": "@@ -1024,17 +1024,16 @@\n  if nr %3E\n-=\n  0 && nr\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-07-04_21-19-41",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pos struct {\n    r, c int\n}\n\nfunc orangeRotting(grid [][]int) int {\n    if len(grid) == 0 {\n        return 0\n    }\n\n    rows := len(grid)\n    cols := len(grid[0])\n\n    queue := []Pos{}\n    freshCount := 0\n\n    for r := 0; r < rows; r++ {\n        for c := 0; c < cols; c++ {\n            if grid[r][c] == 2 {\n                queue = append(queue, Pos{r, c})\n            } else if grid[r][c] == 1 {\n                freshCount++\n            }\n        }\n    }\n\n    if freshCount == 0 {\n        return 0\n    }\n\n    minutes := 0\n    directions := []Pos{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n\n    for len(queue) > 0 && freshCount > 0 {\n        size := len(queue)\n\n        for i := 0; i < size; i++ {\n            size := len(queue)\n\n            for i := 0; i < size; i++ {\n                curr := queue[0]\n                queue = queue[1:]\n\n                for _, d := range directions {\n                    nr, nc := curr.r+d.r, curr.c+d.c\n\n                    if nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] == 1 {\n                        grid[nr][nc] = 2 \n                        freshCount--\n                        queue = append(queue, Pos{nr, nc})\n                    }\n                }\n            }\n            minutes++\n        }\n    }\n\n    if freshCount > 0 {\n        return -1\n    }\n\n    return minutes\n}\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    if !scanner.Scan() {\n        return\n    }\n\n    parts := strings.Fields(scanner.Text())\n    if len(parts) < 2 {\n        return\n    }\n\n    rows, _ := strconv.Atoi(parts[0])\n    cols, _ := strconv.Atoi(parts[1])\n\n    grid := make([][]int, rows)\n\n    for i:= 0; i < rows; i++ {\n        scanner.Scan()\n        line := strings.Fields(scanner.Text())\n        grid[i] = make([]int, cols)\n\n        for j := 0; j < cols; j++ {\n            grid[i][j], _= strconv.Atoi(line[j])\n        }\n    }\n\n    fmt.Println(orangeRotting(grid))\n}\n",
+            "lines": "100"
+        }
+    ]
+}

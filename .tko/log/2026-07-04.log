@@ -99,3 +99,58 @@
 2026-07-04 14:27:25, EXEC, v:1, k:ed@altura, mode:FULL, rate:100, size:136
 2026-07-04 14:27:31, MOVE, v:1, k:ed@altura, mode:BACK
 2026-07-04 14:28:53, SELF, v:1, k:ed@altura, self:1, rate:100, study:15, concept:1, problem:1, debug:1
+2026-07-04 19:45:11, MOVE, v:1, k:ed@caminho, mode:DOWN
+2026-07-04 19:45:11, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-07-04 19:45:11, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 19:45:11, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 19:53:29, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 19:58:29, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 20:01:14, EXEC, v:1, k:ed@caminho, mode:FULL, rate:0, size:129
+2026-07-04 20:03:33, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 20:01:14, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 20:07:56, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 20:10:16, EXEC, v:1, k:ed@caminho, mode:FULL, rate:100, size:157
+2026-07-04 20:10:24, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-07-04 20:10:56, SELF, v:1, k:ed@caminho, self:1, rate:100, concept:1, problem:1
+2026-07-04 20:11:17, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-07-04 20:11:18, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-07-04 20:11:47, SELF, v:1, k:ed@caminho, self:1, rate:100, study:27, concept:1, problem:1
+2026-07-04 20:10:08, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 20:10:16, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-04 20:17:11, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-07-04 20:17:12, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-07-04 20:17:11, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-04 20:33:13, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-04 20:37:07, EXEC, v:1, k:ed@pintura, mode:FULL, size:84, fail:COMP
+2026-07-04 20:37:46, EXEC, v:1, k:ed@pintura, mode:FULL, size:80, fail:COMP
+2026-07-04 20:38:31, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100, size:80
+2026-07-04 20:38:29, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-04 20:38:31, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-04 20:38:43, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-07-04 20:39:04, SELF, v:1, k:ed@pintura, self:1, rate:100, study:21, concept:1, problem:1
+2026-07-04 20:42:23, SELF, v:1, k:ed@pintura, self:1, rate:100, study:21, concept:1, problem:1
+2026-07-04 20:44:03, MOVE, v:1, k:ed@rotten, mode:DOWN
+2026-07-04 20:44:04, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-07-04 20:44:03, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 20:53:05, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 20:58:35, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 21:03:36, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 21:08:22, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 21:13:31, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 21:18:35, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-04 21:19:20, EXEC, v:1, k:ed@rotten, mode:FULL, rate:66, size:100
+2026-07-04 21:19:32, EXEC, v:1, k:ed@rotten, mode:FULL, rate:66
+2026-07-04 21:19:41, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100, size:100
+2026-07-04 21:19:43, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-07-04 21:20:15, SELF, v:1, k:ed@rotten, self:1, rate:100, study:40, concept:1, problem:1
+2026-07-04 21:28:09, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-07-04 21:28:10, EXEC, v:1, k:ed@chaves, mode:FULL, rate:0, size:47
+2026-07-04 21:28:10, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-07-04 21:39:56, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-07-04 21:43:28, EXEC, v:1, k:ed@chaves, mode:FULL, size:74, fail:COMP
+2026-07-04 21:43:26, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-07-04 21:45:17, EXEC, v:1, k:ed@chaves, mode:FULL, rate:100, size:75
+2026-07-04 21:45:31, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-07-04 21:47:05, SELF, v:1, k:ed@chaves, self:1, rate:100, study:17, concept:1, problem:1
+2026-07-04 21:45:22, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-07-04 21:45:16, MOVE, v:1, k:ed@chaves, mode:EDIT

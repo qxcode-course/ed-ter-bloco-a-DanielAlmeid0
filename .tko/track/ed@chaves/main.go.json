@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_21-28-10",
+            "content": "@@ -20,432 +20,23 @@\n t (%0A\n-%09%22container/list%22%0A%09%22fmt%22%0A)%0A%0Afunc main() %7B%0A%09q := NewQueue%5Bstring%5D()%0A%0A%09for i := 0; i %3C 16; i++ %7B%0A%09%09q.Enqueue(string(rune('A' + i)))%0A%09%7D%0A%0A%09for i := 0; i %3C 15; i++ %7B%0A%09%09var gols1, gols2 int%0A%0A%09%09if _, err := fmt.Scan(&gols1, &gols2); err != nil %7B%0A%09%09%09break%0A%09%09%7D%0A%0A%09%09time1 := q.Dequeue()%0A%09%09time2 := q.Dequeue()%0A%0A%09%09if gols1 %3E gols2 %7B%0A%09%09%09q.Enqueue(time1)%0A%09%09%7D else %7B%0A%09%09%09q.Enqueue(time2)%0A%09%09%7D%0A%09%7D%0A%0A%09campeao := q.Dequeue()%0A%09fmt.Println(campeao)\n+)%0A%0Afunc main() %7B\n %0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-07-04_21-43-28",
+            "content": "@@ -21,15 +21,8 @@\n  (%0A%09\n-//%0A%09// \n %22con\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-07-04_21-45-17",
+            "content": "package main\n\nimport (\n\t//\n\t// \"container/list\"\n\t\"fmt\"\n)\n\nfunc main() {\n\tq := NewQueue[string]()\n\n\tfor i := 0; i < 16; i++ {\n\t\tq.Enqueue(string(rune('A' + i)))\n\t}\n\n\tfor i := 0; i < 15; i++ {\n\t\tvar gols1, gols2 int\n\n\t\tif _, err := fmt.Scan(&gols1, &gols2); err != nil {\n\t\t\tbreak\n\t\t}\n\n\t\ttime1 := q.Dequeue()\n\t\ttime2 := q.Dequeue()\n\n\t\tif gols1 > gols2 {\n\t\t\tq.Enqueue(time1)\n\t\t} else {\n\t\t\tq.Enqueue(time2)\n\t\t}\n\t}\n\n\tcampeao := q.Dequeue()\n\tfmt.Println(campeao)\n}\n",
+            "lines": "35"
+        }
+    ]
+}
