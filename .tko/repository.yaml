@@ -18,16 +18,15 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@linear
+expanded: []
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@linear
-selected_index: 6
+selected: ed@bfs
+selected_index: 10
