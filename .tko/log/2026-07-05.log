@@ -1,0 +1,70 @@
+2026-07-05 16:35:44, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-07-05 16:42:19, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 16:47:17, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 16:50:14, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 16:55:02, EXEC, v:1, k:ed@wordsearch, mode:FULL, size:99, fail:COMP
+2026-07-05 16:54:58, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 16:58:03, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:99
+2026-07-05 16:58:48, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:99
+2026-07-05 16:59:26, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:99
+2026-07-05 16:59:48, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-07-05 17:00:12, SELF, v:1, k:ed@wordsearch, self:1, rate:100, study:24, concept:1, problem:1, debug:1
+2026-07-05 16:59:25, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 16:59:26, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-07-05 17:05:53, MOVE, v:1, k:ed@permutacoes, mode:DOWN
+2026-07-05 17:05:54, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-05 17:05:53, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:16:05, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-07-05 17:16:12, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-05 17:22:21, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:26:31, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:30:49, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:43, fail:COMP
+2026-07-05 17:32:21, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:33:09, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:45, fail:COMP
+2026-07-05 17:37:12, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:37:55, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:45, fail:COMP
+2026-07-05 17:38:11, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:47, fail:COMP
+2026-07-05 17:38:23, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:100, size:45
+2026-07-05 17:38:16, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:38:23, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-05 17:42:28, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-07-05 17:42:56, SELF, v:1, k:ed@permutacoes, self:1, rate:100, study:35, concept:1, problem:1, debug:1
+2026-07-05 17:57:48, MOVE, v:1, k:ed@queimando, mode:DOWN
+2026-07-05 17:57:49, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-07-05 17:57:48, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:01:38, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 17:57:48, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:07:24, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:12:08, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:17:14, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:21:00, EXEC, v:1, k:ed@queimando, mode:FULL, size:99, fail:COMP
+2026-07-05 18:20:48, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:25:03, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:99
+2026-07-05 18:25:34, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-07-05 18:25:57, SELF, v:1, k:ed@queimando, self:1, rate:100, concept:1, problem:1, debug:1
+2026-07-05 18:25:00, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:25:03, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-07-05 18:29:32, SELF, v:1, k:ed@queimando, self:1, rate:100, study:31, concept:1, problem:1, debug:1
+2026-07-05 20:42:25, MOVE, v:1, k:ed@pilhado, mode:DOWN
+2026-07-05 20:42:27, MOVE, v:1, k:ed@pilhado, mode:PICK
+2026-07-05 20:42:25, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 20:42:25, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 20:42:25, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 20:50:17, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:07:59, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:11:35, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:22:56, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:27:57, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:33:03, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:33:38, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:50:59, EXEC, v:1, k:ed@pilhado, mode:FULL, size:136, fail:COMP
+2026-07-05 21:49:09, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:56:23, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:0, size:138
+2026-07-05 21:56:54, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:0, size:139
+2026-07-05 21:57:04, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:0, size:139
+2026-07-05 21:57:02, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:57:04, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-07-05 21:58:54, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:0, size:139
+2026-07-05 21:59:08, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:100, size:139
+2026-07-05 21:59:17, MOVE, v:1, k:ed@pilhado, mode:BACK
+2026-07-05 21:59:40, SELF, v:1, k:ed@pilhado, self:1, rate:100, study:1000, concept:1, problem:1, debug:1

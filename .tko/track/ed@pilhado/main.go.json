@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_21-50-59",
+            "content": "@@ -38,16 +38,32 @@\n %22%0A%09%22os%22%0A\n+%09%22text/scanner%22%0A\n )%0A%0A%0Atype\n@@ -551,37 +551,8 @@\n %5D()%0A\n-%09becos := NewStack%5BPos%5D()%0A%0A%09%0A\n %09dir\n@@ -1426,17 +1426,19 @@\n t(), %22%25d\n- \n+%22 %22\n %25d%22, &nl\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-05_21-56-23",
+            "content": "@@ -558,16 +558,17 @@\n Pos%5D()%0A%0A\n+%09\n %0A%09direco\n@@ -618,31 +618,8 @@\n %7D%7D%0A%0A\n-%09caminho.Push(inicio)%0A%09\n %0A%09fo\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-05_21-56-54",
+            "content": "@@ -635,16 +635,17 @@\n inicio)%0A\n+%09\n %0A%09for !c\n@@ -872,25 +872,24 @@\n %09%09if nlViz %3E\n-=\n  0 && nlViz \n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-05_21-57-04",
+            "content": "@@ -1441,17 +1441,16 @@\n fmt.Scan\n-f\n (scanner\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-05_21-58-54",
+            "content": "@@ -1438,17 +1438,16 @@\n t%0A%09fmt.S\n-s\n canf(sca\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-05_21-59-08",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc encontraPosicoes(grid [][]rune) (Pos, Pos) {\n\tvar inicio, fim Pos \n\tfor i, row := range grid {\n\t\tfor j, ch := range row {\n\t\t\tif ch == 'I' {\n\t\t\t\tinicio = Pos{i, j}\n\t\t\t} else if ch == 'F' {\n\t\t\t\tfim = Pos{i, j}\n\t\t\t}\n\t\t}\n\t}\n\treturn inicio, fim\n}\n\nfunc escapeMaze(grid [][]rune, inicio, fim Pos) {\n\tnl := len(grid)\n\tnc := len(grid[0])\n\n\tvisited := make([][]bool, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tvisited[i] = make([]bool, nc)\n\t}\n\n\tcaminho := NewStack[Pos]()\n\tbecos := NewStack[Pos]()\n\n\n\tdirecoes := []Pos{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n\n\tcaminho.Push(inicio)\n\n\tfor !caminho.IsEmpty() {\n\t\tatual := caminho.Top()\n\t\tvisited[atual.l][atual.c] = true\n\n\t\tif atual == fim {\n\t\t\tbreak\n\t\t}\n\n\t\tvar validos []Pos\n\n\t\tfor _, d := range direcoes {\n\t\t\tnlViz := atual.l + d.l\n\t\t\tncViz := atual.c + d.c\n\n\t\t\tif nlViz >= 0 && nlViz < nl && ncViz >= 0 && ncViz < nc {\n\t\t\t\tif grid[nlViz][ncViz] != '#' && !visited[nlViz][ncViz] {\n\t\t\t\t\tvalidos = append(validos, Pos{nlViz, ncViz})\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tif len(validos) > 0 {\n\t\t\tcaminho.Push(validos[0])\n\t\t} else  {\n\t\t\tbecos.Push(atual)\n\t\t\tcaminho.Pop()\n\t\t}\n\t}\n\n\tfor !caminho.IsEmpty() {\n\t\tp := caminho.Pop()\n\t\tgrid[p.l][p.c] = '.'\n\t}\n}\n\nfunc printGrid(grid [][]rune) {\n\tfor _, row := range grid {\n\t\tfmt.Println(string(row))\n\t}\n}\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan(){\n\t\treturn\n\t}\n\n\tvar nl, nc int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nl, &nc)\n\n\tgrid := make([][]rune, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\tinicio, fim := encontraPosicoes(grid)\n\n\tescapeMaze(grid, inicio, fim)\n\n\tprintGrid(grid)\n}\n",
+            "lines": "106"
+        }
+    ]
+}

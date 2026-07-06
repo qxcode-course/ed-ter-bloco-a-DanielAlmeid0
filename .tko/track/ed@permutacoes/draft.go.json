@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_17-30-49",
+            "content": "@@ -20,43 +20,16 @@\n t (%0A\n-    %22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A    %22sort%22\n+%09%22fmt%22%0A%09\n %0A)%0A%0A\n@@ -696,17 +696,16 @@\n        %7D\n-)\n %0A%0A      \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-05_17-33-09",
+            "content": "@@ -671,16 +671,17 @@\n nt) bool\n+)\n  %7B%0A     \n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-07-05_17-37-55",
+            "content": "@@ -214,49 +214,9 @@\n   fo\n-r i := 0; i %3C count; i++ %7B%0A        %0A    %7D\n+t\n  i :\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-07-05_17-38-11",
+            "content": "@@ -223,16 +223,56 @@\n = 0; i %3C\n+ count; i++ %7B%0A        %0A    %7D i := 0; i %3C\n  len(run\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-07-05_17-38-23",
+            "content": "package main\n\nimport (\n    \"bufio\"\n\t\"fmt\"\n\t\"os\"\n    \"sort\"\n)\n\nfunc backtrack(path []rune, runes []rune, visited []bool) {\n    if len(path) == len(runes) {\n        fmt.Println(string(path))\n        return\n    }\n\n    for i := 0; i < len(runes); i++ {\n        if !visited[i] {\n            visited[i] = true\n            path = append(path, runes[i])\n\n            backtrack(path, runes, visited)\n\n            path = path[:len(path)-1]\n            visited[i] = false \n        }\n    }\n}\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n\n    if scanner.Scan() {\n        text := scanner.Text()\n\n        runes := []rune(text)\n        \n\n        sort.Slice(runes, func(i, j int) bool {\n            return runes[i] < runes[j]\n        })\n\n        visited := make([]bool, len(runes))\n\n        backtrack([]rune{}, runes, visited)\n    }\n}\n",
+            "lines": "45"
+        }
+    ]
+}
